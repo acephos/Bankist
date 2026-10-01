@@ -41,7 +41,7 @@ const account2 = {
     '2020-07-26T12:01:20.894Z',
   ],
   currency: 'INR',
-  locale: 'hi-HI',
+  locale: 'hi-IN',
 };
 
 const account3 = {
@@ -125,7 +125,7 @@ const account7 = {
     '2023-04-01T10:17:24.185Z',
   ],
   currency: 'JPY',
-  locale: 'jp-JP',
+  locale: 'ja-JP',
 };
 const accounts = [
   account1,
@@ -209,13 +209,14 @@ const calcSecondsPassed = time => {
 
 const displayMovements = function (account, sort = false) {
   containerMovements.innerHTML = '';
-  const movs = sort
-    ? account.movements.slice().sort((a, b) => a - b)
-    : account.movements;
-  movs.forEach(function (mov, index) {
+  const transactions = account.movements.map((amount, index) => ({
+    amount, date: account.movementsDates[index],
+  }));
+  if (sort) transactions.sort((a, b) => a.amount - b.amount);
+  transactions.forEach(function ({ amount: mov, date }) {
     const type = mov > 0 ? `deposit` : `withdrawal`;
     const days = dateFormat(
-      new Date(account.movementsDates[index]),
+      new Date(date),
       account.locale
     );
     const html = `
