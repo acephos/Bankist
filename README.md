@@ -1,12 +1,9 @@
 # Bankist
-A simple yet elegant banking application with minimalistic aesthetics and a huge set of functional and useful features.
 
-My First fully functional web application, developed Using HTML5, CSS and JavaScript, during my early learning phase.
+Historical JavaScript banking simulation from an early learning phase. It uses fictional in-memory accounts; transfers, loans, and PIN login demonstrate browser behavior only. Refreshing resets the data.
 
-With this project I strengthened my grasp on Arrays and associated Methods, Timer Functions, HTML Structuring, Modern CSS Styling, Intl.js (Internationalization) Library as well as Call back Functions.
-I also learnt a many good coding practices for maintaining Code Quality in the form of Readablitiy, Modularity as well as Proper Scope Handling.
+The Bankist exercise/design originates in Jonas Schmedtmann's JavaScript course. This repository contains a learning implementation and adaptations, not a production banking service.
 
+Open `index.html` directly or run `python3 -m http.server 8000` in this directory. Try username `r@k` with PIN `1111`, or `c@k` with PIN `2222`. These are public demo credentials.
 
-
-# Start
-Simply by using Live Server extension available on VSCode, to run ```index.html```
+Transactions retain their amount/date association when sorting. The interface also demonstrates array operations, timers, and `Intl` formatting. Keep this as historical practice rather than portfolio evidence of financial authentication or infrastructure.
